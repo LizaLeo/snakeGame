@@ -13,10 +13,11 @@ import java.util.TimerTask;
 
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import javax.swing.text.Document;
 
-import org.jsoup.Jsoup;
+/*import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
+import org.jsoup.select.Elements;*/
 
 import ee.itcollege.snake.elements.Snake;
 import ee.itcollege.snake.game.GameField;
@@ -28,20 +29,21 @@ public class SnakeGameStart implements Runnable {
 	GameField game = new GameField();
 	JFrame window = new JFrame("Uss!!");
 	
-	@Override
+	//@Override
 	public void run() {
 		
 		new Thread(new Runnable() {
-			@Override
+			//@Override
 			public void run() {
 				Document document;
-				try {
-					document = Jsoup.connect("http://postimees.ee").get();
-					String title = document.select("h1.frontHeading").first().text();
+				/*try {*/
+					//document = Jsoup.connect("http://postimees.ee").get();
+					//String title = document.select("h1.frontHeading").first().text();
+					String title = "Test";
 					window.setTitle(title);
-				} catch (IOException e1) {
+				/*} catch (IOException e1) {
 					e1.printStackTrace();
-				}
+				}*/
 			}
 		}).start();
 
@@ -91,7 +93,7 @@ public class SnakeGameStart implements Runnable {
 			public void run() {
 				game.tick();
 			}
-		}, 1500, 1500);
+		}, 100, 100);
 	}
 	
 	public void saveGame() {

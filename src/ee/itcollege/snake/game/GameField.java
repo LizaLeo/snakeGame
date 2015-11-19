@@ -25,7 +25,7 @@ public class GameField extends JPanel {
 	
 	private Snake snake = new Snake();
 	private GameFrame frame = new GameFrame();
-	private ArrayList<Apple> apples = new ArrayList<>();
+	private ArrayList<Apple> apples = new ArrayList<Apple>();
 	
 	public void tick() {
 		snake.move();

@@ -13,7 +13,7 @@ import ee.itcollege.snake.lib.IEdible;
 public class Snake implements IDrawable {
 
 	private ArrayList<SnakePart> parts = new ArrayList<SnakePart>();
-	private LinkedList<Direction> directionOrders = new LinkedList<>();
+	private LinkedList<Direction> directionOrders = new LinkedList<Direction>();
 
 	private Direction direction = Direction.RIGHT;
 
@@ -24,14 +24,12 @@ public class Snake implements IDrawable {
 		}
 	}
 
-	@Override
 	public void drawItself(Graphics2D g) {
 		for (SnakePart part : parts) {
 			part.drawItself(g);
 		}
 	}
 
-	@Override
 	public Area getCollisionArea() {
 		return getHead().getCollisionArea();
 	}
